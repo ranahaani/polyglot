@@ -1,8 +1,8 @@
 {
-  "build": {
-    "env": {
-      "CI": "1"
-    },
-    "command": "npm install --legacy-peer-deps && npm run build"
-  }
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node", "args": ["install", "--legacy-peer-deps"] }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
 }
