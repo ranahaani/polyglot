@@ -1,0 +1,10 @@
+
+/* Set the color of the navigation bar */
+.navbar {
+  background-color: #007bff !important;
+}
+
+/* Set the color of the text in the navigation bar */
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}

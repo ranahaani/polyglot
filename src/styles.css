@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-theme-color: #181D33;
+}
+
+/* Background colors */
+body {
+  background-color: #F4F6FF;
+}

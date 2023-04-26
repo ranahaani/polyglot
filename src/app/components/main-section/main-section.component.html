@@ -1,0 +1,52 @@
+<!-- Main Content -->
+<div class="container">
+  <h1 class="text-center my-4">AI Code Translator</h1>
+
+  <div style="display: flex; justify-content: center">
+    <input class="text-search-provider-messages my-4" placeholder="OpenAI API Key" [(ngModel)]="openAIKey">
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!--      <label for="inputLangauge">Output</label>-->
+      <h4>Input</h4>
+
+      <select class="custom-select input-container" id="inputLangauge" [(ngModel)]="inputSelectedValue"
+              (ngModelChange)="onInputLanguageChange($event)" required>
+        <option *ngFor="let language of programmingLanguages" [value]="language.value">{{ language.name }}</option>
+      </select>
+      <div style="height: 500px">
+        <ngx-monaco-editor style="height: 100%" [options]="inputOptions" [(ngModel)]="inputCode"></ngx-monaco-editor>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+      <h4>Output</h4>
+
+      <select class="custom-select" id="outputLanguage" [(ngModel)]="outputSelectedValue" required>
+        <option *ngFor="let language of programmingLanguages" [value]="language.value">{{ language.name }}</option>
+      </select>
+      <div style="height: 500px">
+        <ngx-monaco-editor style="height: 100%" [options]="outputOptions"
+                           [(ngModel)]="outputCode"></ngx-monaco-editor>
+        <button class="btn btn-light" (click)="copyToClipboard(outputCode)">
+          <i class="far fa-copy"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="text-center my-4">
+    <button class="btn btn-primary" [disabled]="isLoading" (click)="translate()">
+      <span *ngIf="!isLoading">Translate</span>
+
+      <span *ngIf="isLoading">
+<!--        <div class="loader"></div>-->
+
+    <span *ngIf="isLoading"><i class="fas fa-spinner fa-spin"></i> Translating...</span>
+              <span class="sr-only">Loading...</span>
+    </span>
+    </button>
+  </div>
+
+
+</div>

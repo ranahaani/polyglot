@@ -1,0 +1,166 @@
+/* Set the background color of the page */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Style the form container */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style the input fields */
+.form-control {
+  margin-bottom: 10px;
+}
+
+/* Style the "Compare" button */
+.btn-primary {
+  margin-top: 10px;
+}
+
+/* Style the card container */
+.card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style the card header */
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Style the card body */
+.card-body {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the JSON comparison result */
+.jsondiffpatch-delta {
+  font-family: monospace;
+}
+
+.jsondiffpatch-added {
+  background-color: #c8f7c5;
+}
+
+.jsondiffpatch-removed {
+  background-color: #f7c5c8;
+}
+
+/* Style the h1 and h2 headers */
+h1, h2 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #007bff;
+  font-size: 36px;
+}
+
+h2 {
+  color: #6c757d;
+  font-size: 24px;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select::after {
+  content: "▼";
+  font-size: 1rem;
+  top: 6px;
+  right: 10px;
+  position: absolute;
+}
+
+.input-field {
+  padding: 0.5em 0.75em;
+  border-radius: 0.2em;
+  border: 1px solid var(--c-border, currentColor);
+  color: var(--c-text);
+  font-size: 1rem;
+  letter-spacing: 0.1ch;
+  width: 100%;
+}
+
+.input-field:not(:placeholder-shown) + .input-label {
+  transform: translateY(-220%);
+  opacity: 1;
+}
+
+.input-field:invalid {
+  --c-border: rgb(230, 85, 60);
+  --c-text: rgb(230, 85, 60);
+  --c-outline: rgb(230, 85, 60);
+}
+
+.input-field:is(:disabled, :read-only) {
+  --c-border: rgb(150, 150, 150);
+  --c-text: rgb(170, 170, 170);
+}
+
+.input-field:is(:focus, :focus-visible) {
+  outline: 2px solid var(--c-outline);
+  outline-offset: 2px;
+}
+
+.input-label {
+  --timing: 200ms ease-in;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transition: transform var(--timing),
+  opacity var(--timing);
+  transform: translateY(-50%);
+  opacity: 0;
+  color: var(--c-text);
+  font-weight: 500;
+}
+
+.custom-select {
+  margin-bottom: 10px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 10px solid;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    border-color: white rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+  }
+
+  33% {
+    border-color: white white rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
+  }
+
+  66% {
+    border-color: white white white rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    border-color: white white white white;
+  }
+}
