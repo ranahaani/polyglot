@@ -1,6 +1,6 @@
-# Polyglot App
+# Polyglot
 
-Polyglot App is a web-based code translator that allows you to convert your code from one programming language to another. It uses OpenAI's GPT-3 language model to perform the translations.
+Polyglot is a web-based code translator that allows you to convert your code from one programming language to another. It uses OpenAI's GPT-3 language model to perform the translations.
 
 ## Getting Started
 
@@ -12,8 +12,8 @@ Polyglot App is a web-based code translator that allows you to convert your code
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/polyglot-app.git`
-2. Navigate to the project directory: `cd polyglot-app`
+1. Clone the repository: `git clone https://github.com/ranahaani/polyglot.git`
+2. Navigate to the project directory: `cd polyglot`
 3. Install the dependencies: `npm install`
 4. Create a file named `environments.ts` in the `src/environments` directory with the following contents:
 
