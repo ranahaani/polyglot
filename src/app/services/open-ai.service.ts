@@ -22,7 +22,6 @@ export class OpenAiService {
 
 
   getDataFromOpenAI(prompt: string): Observable<string> {
-    debugger
     return from(
       this.openai.createCompletion({
         model: 'text-davinci-003',

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {programmingLanguages} from "../../constants/languages";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {OpenAiService} from "../../services/open-ai.service";
@@ -25,7 +25,7 @@ export class MainSectionComponent implements OnInit {
   isLoading: boolean = false;
   openAIKey: string = '';
   maxCodeLength = 12000;
-
+  @ViewChild('toast') toast: any;
 
   constructor(private openAIService: OpenAiService) {
   }
@@ -65,17 +65,20 @@ export class MainSectionComponent implements OnInit {
     const inputLanguage = this.programmingLanguages.find(language => language.value === this.inputSelectedValue);
     const outputLanguage = this.programmingLanguages.find(language => language.value === this.outputSelectedValue);
 
-    let prompt = "##### Translate following code  from \n" +
-      inputLanguage!.value +
-      "into \n" +
-      outputLanguage!.value + "\n" +
-      this.inputCode;
+    let prompt = `Translate the following code from ${inputLanguage!.name} into ${outputLanguage!.name}: ${this.inputCode}`
+    this.isLoading = true;
 
-
-    this.openAIService.getDataFromOpenAI(prompt).subscribe((data) => {
-      this.outputCode = data;
-      this.isLoading = false
-    });
+    this.openAIService.getDataFromOpenAI(prompt).subscribe(
+      (response) => {
+        this.outputCode = response;
+      },
+      (error) => {
+        console.error(error);
+      },
+      () => {
+        this.isLoading = false;
+      }
+    );
   }
 
 
@@ -85,12 +88,14 @@ export class MainSectionComponent implements OnInit {
 
 
   copyToClipboard(text: string) {
+
     const el = document.createElement('textarea');
     el.value = text;
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+
   }
 
 }

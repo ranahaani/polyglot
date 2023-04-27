@@ -164,3 +164,8 @@ select {
     border-color: white white white white;
   }
 }
+
+.copy-btn{
+  position: absolute;
+  right: 12px;
+}

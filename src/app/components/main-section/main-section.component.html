@@ -29,7 +29,7 @@
       <div style="height: 500px">
         <ngx-monaco-editor style="height: 100%" [options]="outputOptions"
                            [(ngModel)]="outputCode"></ngx-monaco-editor>
-        <button class="btn btn-light" (click)="copyToClipboard(outputCode)">
+        <button class="btn btn-light copy-btn" (click)="copyToClipboard(outputCode)">
           <i class="far fa-copy"></i>
         </button>
       </div>
