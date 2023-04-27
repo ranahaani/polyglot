@@ -25,7 +25,7 @@ export class MainSectionComponent implements OnInit {
   isLoading: boolean = false;
   openAIKey: string = '';
   maxCodeLength = 12000;
-  @ViewChild('toast') toast: any;
+  isCopied: boolean = false;
 
   constructor(private openAIService: OpenAiService) {
   }
@@ -95,6 +95,11 @@ export class MainSectionComponent implements OnInit {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+
+    this.isCopied = true;
+    setTimeout(() => {
+      this.isCopied = false;
+    }, 2000);
 
   }
 

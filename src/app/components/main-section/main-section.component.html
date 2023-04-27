@@ -30,8 +30,10 @@
         <ngx-monaco-editor style="height: 100%" [options]="outputOptions"
                            [(ngModel)]="outputCode"></ngx-monaco-editor>
         <button class="btn btn-light copy-btn" (click)="copyToClipboard(outputCode)">
-          <i class="far fa-copy"></i>
+          <ng-container *ngIf="!isCopied; else copiedIcon"><i class="far fa-copy"></i></ng-container>
+          <ng-template #copiedIcon><i class="fas fa-check"></i></ng-template>
         </button>
+
       </div>
     </div>
   </div>
