@@ -43,3 +43,4 @@ src/app/environments.ts
 # System files
 .DS_Store
 Thumbs.db
+.vercel
