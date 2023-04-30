@@ -1,6 +1,7 @@
 # Polyglot
 
 Polyglot is a web-based code translator that allows you to convert your code from one programming language to another. It uses OpenAI's GPT-3 language model to perform the translations.
+![code translator](https://user-images.githubusercontent.com/28961554/235333990-daf10ee8-9ea6-4796-9e54-615ad6de7ae1.gif)
 
 ## Getting Started
 
